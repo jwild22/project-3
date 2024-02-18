@@ -23,12 +23,13 @@
   padding-bottom: 48px;
 }
 
-#title {
+.title {
   font-family: 'Inter';
   font-weight: 700;
   font-size: 28px;
   text-decoration: none;
   color: rgba(0, 0, 0, 1);
+  cursor: pointer;
 }
 
 #summary {

@@ -43,7 +43,7 @@ function loadArticles() {
           `<div></div>`,
           `<div class="col-8" id="${item.id}">
             <p id="author">${item.byline} <span id="in">in</span> ${item.section} <span id="in">&#183; ${month} ${day}</span></p>
-            <a href="./article.html" id="title">${item.title}</a>
+            <a class="title">${item.title}</a>
             <p id="summary">${item.abstract}</p>
            </div>
           <img src="${item.media[0]['media-metadata'][2].url}" alt="picture" />
@@ -55,3 +55,22 @@ function loadArticles() {
 }
 
 loadArticles();
+
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    const buttons = Array.from(document.getElementsByClassName('title'));
+    buttons.forEach((button) => {
+      if (button) {
+        button.addEventListener('click', () => {
+          window.location.href = `index2.html?post=${button.parentNode.id}`;
+        });
+      } else {
+        const urlParams = new URLSearchParams(window.location.search);
+        const postId = urlParams.get('post');
+        if (postId) {
+          console.log('Post ID:', postId);
+        }
+      }
+    });
+  }, 800);
+});
