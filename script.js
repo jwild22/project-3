@@ -14,7 +14,7 @@ const months = [
 ];
 
 const nytimesAPI =
-  'https://api.nytimes.com/svc/mostpopular/v2/emailed/1.json?api-key=Z4Zobg9LyecRqacQYsjnjmFb52iTaMUk';
+  'https://api.nytimes.com/svc/mostpopular/v2/emailed/30.json?api-key=Z4Zobg9LyecRqacQYsjnjmFb52iTaMUk';
 
 const article = `
   <div class="d-flex justify-content-between my-5">
