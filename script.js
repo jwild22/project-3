@@ -24,7 +24,6 @@ const article = `
 
 const articles = document.getElementById('article');
 const spinner = `<div class="spinner-border mt-5" id="spinner"></div>`;
-const articlesID = {};
 
 function loadArticles() {
   fetch(nytimesAPI)
@@ -51,7 +50,6 @@ function loadArticles() {
           `
         );
         articles.innerHTML += newArticle;
-        articlesID[`${item.id}`] = item.uri;
       });
     });
 }
