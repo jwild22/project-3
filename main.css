@@ -32,6 +32,10 @@
   cursor: pointer;
 }
 
+p.title {
+  cursor: auto;
+}
+
 #summary {
   font-family: 'Inter';
   font-weight: 400;

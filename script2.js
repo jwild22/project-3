@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `<div class="" id="${result.uri}">
           <a href="./index.html"><img id="arrow" src="./assets/left.png" alt="arrow" /></a>
           <p id="author">${result.byline.original} <span id="in">in</span> ${result.section_name} <span id="in">&#183; ${month} ${day}</span></p>
-          <a class="title">${result.headline.main}</a>
+          <p class="title">${result.headline.main}</p>
           <p id="summary">${result.lead_paragraph}</p>
           <img id="img_big" src="http://static01.nyt.com/${result.multimedia[11].url}" alt="picture" />
          </div>
