@@ -55,6 +55,7 @@ img {
   height: 265px;
   aspect-ratio: auto;
   object-fit: cover;
+  margin-bottom: 80px;
 }
 
 #img_big {
