@@ -1,3 +1,3 @@
-Project 3 - Media as medium
+# Project 3 - Media as Medium
 
 It was hard!
