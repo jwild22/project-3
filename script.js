@@ -14,7 +14,7 @@ const months = [
 ];
 
 const nytimesAPI =
-  'https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=Z4Zobg9LyecRqacQYsjnjmFb52iTaMUk';
+  'https://api.nytimes.com/svc/mostpopular/v2/emailed/1.json?api-key=Z4Zobg9LyecRqacQYsjnjmFb52iTaMUk';
 
 const article = `
   <div class="d-flex justify-content-between my-5">
@@ -24,6 +24,7 @@ const article = `
 
 const articles = document.getElementById('article');
 const spinner = `<div class="spinner-border mt-5" id="spinner"></div>`;
+const articlesID = {};
 
 function loadArticles() {
   fetch(nytimesAPI)
@@ -41,7 +42,7 @@ function loadArticles() {
         let day = publishedDate.getDay();
         let newArticle = article.replace(
           `<div></div>`,
-          `<div class="col-8" id="${item.id}">
+          `<div class="col-8" id="${item.uri}">
             <p id="author">${item.byline} <span id="in">in</span> ${item.section} <span id="in">&#183; ${month} ${day}</span></p>
             <a class="title">${item.title}</a>
             <p id="summary">${item.abstract}</p>
@@ -50,6 +51,7 @@ function loadArticles() {
           `
         );
         articles.innerHTML += newArticle;
+        articlesID[`${item.id}`] = item.uri;
       });
     });
 }
